@@ -4,10 +4,12 @@ import Loading from './components/Loading/Loading';
 import AppRoutes from './Routes/AppRoutes';
 import { useLoading } from './hooks/useLoading';
 import { setLoadingInterceptor } from './interceptors/loadinginterceptors';
+import logger from "./logger";
 function App() {
   const {showLoading, hideLoading} = useLoading();
 
   useEffect(()=>{
+    logger.log("App component rendered");
     setLoadingInterceptor({showLoading, hideLoading});
   },[]);
 
