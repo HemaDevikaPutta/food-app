@@ -3,14 +3,6 @@ import RegisterPage from './RegisterPage'; // Adjust the import based on your fi
 import { BrowserRouter as Router } from 'react-router-dom'; // For routing
 import { useAuth } from '../../hooks/useAuth'; // Mocking the custom hook
 
-// Mock the custom hook 'useAuth'
-jest.mock('../../hooks/useAuth', () => ({
-  useAuth: () => ({
-    user: null, // Default to no user logged in for the tests
-    register: jest.fn().mockResolvedValue({}), // Mocking register function
-  }),
-}));
-
 // Wrapping the component with Router to handle routing
 const Wrapper = ({ children }) => <Router>{children}</Router>;
 
